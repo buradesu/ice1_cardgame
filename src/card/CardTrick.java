@@ -73,6 +73,21 @@ public class CardTrick {
         Card luckyCard =  new Card();
         luckyCard.setValue(2);
         luckyCard.setSuit("Clubs");
-    }
+        
+        boolean userWon = false; 
+        // check if luckyCard is in magicHand
+        for (Card magicHandCard : magicHand ) {
+            if ( luckyCard.getValue() == magicHandCard.getValue() 
+                    && luckyCard.getSuit().equals(magicHandCard.getSuit()) )
+                userWon = true;
+        }
+        
+        if (userWon)
+            System.out.println(""
+                    + "Magic hand had the lucky card, you won!");
+        else
+            System.out.println(""
+                    + "Magic hand didn't have the lucky card, you lost...");
+        }
+ }
     
-}
